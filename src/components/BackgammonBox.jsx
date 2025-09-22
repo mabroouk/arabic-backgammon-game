@@ -244,6 +244,15 @@ const BackgammonBox = () => {
           )}
         </AnimatePresence>
       </div>
+      
+      {/* معلومات المطور */}
+      <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50">
+        <div className="bg-black/20 backdrop-blur-sm rounded-lg px-4 py-2 border border-white/10">
+          <p className="text-white/80 text-sm font-medium text-center">
+            برمجة وتطوير: <span className="text-amber-300 font-semibold">محاسب أحمد مبروك</span> © 2024
+          </p>
+        </div>
+      </div>
     </div>
   );
 };

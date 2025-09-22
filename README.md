@@ -1,4 +1,5 @@
-# 🎲 لعبة الطاولة الاحترافية - Professional Backgammon Game
+# 🎲 لعبة الطاولة العربية الاحترافية
+**برمجة وتطوير: محاسب أحمد مبروك © 2024**
 
 [![React](https://img.shields.io/badge/React-18.0+-blue.svg)](https://reactjs.org/)
 [![Vite](https://img.shields.io/badge/Vite-6.0+-green.svg)](https://vitejs.dev/)

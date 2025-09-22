@@ -489,6 +489,15 @@ const EnhancedGameBoard = ({ gameMode, onBackToMenu, playerMode = { playerMode: 
           selectedMode={gameMode} 
           isVisible={showRules}
         />
+        
+        {/* معلومات المطور */}
+        <div className="fixed bottom-4 right-4 z-50">
+          <div className="bg-black/30 backdrop-blur-sm rounded-lg px-3 py-2 border border-white/20">
+            <p className="text-white/90 text-xs font-medium">
+              برمجة وتطوير: <span className="text-amber-300 font-semibold">محاسب أحمد مبروك</span> © 2024
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );
