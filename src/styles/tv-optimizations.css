@@ -1,0 +1,302 @@
+/* تحسينات خاصة بالتلفزيون والشاشات الكبيرة */
+/* TV and Large Screen Optimizations */
+
+/* فحص إذا كان الجهاز تلفزيون أو شاشة كبيرة */
+@media screen and (min-width: 1920px) and (min-height: 1080px) {
+  /* تكبير الخطوط والعناصر للتلفزيون */
+  html {
+    font-size: 125%;
+  }
+  
+  body {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+  
+  /* تحسين الأزرار للتحكم بالريموت */
+  button, .btn {
+    min-height: 60px;
+    min-width: 120px;
+    font-size: 1.3rem;
+    padding: 15px 25px;
+    border-radius: 12px;
+    font-weight: 600;
+  }
+  
+  /* تحسين البطاقات */
+  .card {
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* تحسين لوحة اللعب */
+  .game-board {
+    transform: scale(1.15);
+    margin: 40px auto;
+  }
+  
+  /* تحسين قطع اللعب */
+  .game-piece {
+    width: 35px !important;
+    height: 35px !important;
+    border-width: 3px;
+  }
+  
+  /* تحسين النرد */
+  .dice {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+  }
+  
+  /* إخفاء المؤشر في التلفزيون */
+  * {
+    cursor: none !important;
+  }
+  
+  /* تحسين التركيز للريموت */
+  .tv-focused {
+    outline: 4px solid #FFD700 !important;
+    outline-offset: 4px;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.8) !important;
+    transform: scale(1.08) !important;
+    z-index: 9999 !important;
+  }
+  
+  /* تحسين النصوص */
+  h1 { font-size: 3rem; }
+  h2 { font-size: 2.5rem; }
+  h3 { font-size: 2rem; }
+  h4 { font-size: 1.8rem; }
+  h5 { font-size: 1.6rem; }
+  h6 { font-size: 1.4rem; }
+  
+  /* تحسين المسافات */
+  .container {
+    padding: 40px;
+  }
+  
+  /* تحسين القوائم */
+  .menu-item {
+    padding: 20px 30px;
+    margin: 10px 0;
+    font-size: 1.4rem;
+  }
+  
+  /* تحسين الشاشة الجانبية */
+  .sidebar {
+    width: 350px;
+    padding: 30px;
+  }
+  
+  /* تحسين عرض النقاط */
+  .score-display {
+    font-size: 2rem;
+    padding: 20px;
+  }
+  
+  /* تحسين أزرار التحكم */
+  .control-buttons {
+    gap: 20px;
+  }
+  
+  .control-buttons button {
+    min-width: 150px;
+    height: 70px;
+    font-size: 1.4rem;
+  }
+}
+
+/* تحسينات للشاشات فائقة الدقة 4K */
+@media screen and (min-width: 3840px) and (min-height: 2160px) {
+  html {
+    font-size: 150%;
+  }
+  
+  .game-board {
+    transform: scale(1.4);
+  }
+  
+  button, .btn {
+    min-height: 80px;
+    min-width: 160px;
+    font-size: 1.6rem;
+  }
+  
+  .game-piece {
+    width: 45px !important;
+    height: 45px !important;
+  }
+  
+  .dice {
+    width: 100px;
+    height: 100px;
+    font-size: 2.5rem;
+  }
+}
+
+/* تحسينات للتلفزيونات الذكية */
+@media screen and (device-type: tv) {
+  /* إعدادات خاصة بالتلفزيونات الذكية */
+  body {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: #ffffff;
+  }
+  
+  /* تحسين التباين للمشاهدة من بعيد */
+  .card {
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
+    border: 2px solid #ddd;
+  }
+  
+  /* تحسين الألوان للتلفزيون */
+  .btn-primary {
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    border: none;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  
+  .btn-secondary {
+    background: linear-gradient(45deg, #6c757d, #495057);
+    border: none;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* تحسين الظلال للعمق البصري */
+  .game-board {
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  }
+  
+  .card {
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4);
+  }
+}
+
+/* تحسينات للتحكم بالريموت */
+.tv-remote-active {
+  /* تحسين التنقل بالريموت */
+  .tv-focusable {
+    transition: all 0.2s ease;
+    border: 2px solid transparent;
+  }
+  
+  .tv-focusable:focus,
+  .tv-focusable.tv-focused {
+    border-color: #FFD700;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+    transform: scale(1.05);
+    z-index: 1000;
+  }
+  
+  /* تحسين الأزرار للريموت */
+  button.tv-focusable:focus,
+  button.tv-focused {
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    color: #000;
+    font-weight: bold;
+    text-shadow: none;
+  }
+  
+  /* تحسين قطع اللعب للريموت */
+  .game-piece.tv-focused {
+    border-color: #FFD700;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+    transform: scale(1.2);
+  }
+  
+  /* تحسين نقاط اللوحة للريموت */
+  .board-point.tv-focused {
+    background: rgba(255, 215, 0, 0.3);
+    border: 3px solid #FFD700;
+  }
+}
+
+/* تحسينات للأداء على التلفزيون */
+@media screen and (min-width: 1920px) {
+  /* تقليل الرسوم المتحركة المعقدة */
+  .reduce-motion {
+    animation-duration: 0.3s !important;
+    transition-duration: 0.3s !important;
+  }
+  
+  /* تحسين الذاكرة */
+  .optimize-memory * {
+    will-change: auto;
+  }
+  
+  /* تحسين الرسم */
+  .game-board,
+  .card,
+  .button {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+}
+
+/* دعم الوضع المظلم للتلفزيون */
+@media (prefers-color-scheme: dark) and (min-width: 1920px) {
+  body {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    color: #f0f0f0;
+  }
+  
+  .card {
+    background: rgba(30, 30, 30, 0.95);
+    color: #f0f0f0;
+    border: 2px solid #444;
+  }
+  
+  .game-board {
+    filter: brightness(0.9) contrast(1.1);
+  }
+}
+
+/* تحسينات للاستجابة السريعة */
+.tv-optimized {
+  /* تقليل زمن الاستجابة */
+  * {
+    transition-duration: 0.15s;
+  }
+  
+  /* تحسين التمرير */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* تحسين التركيز */
+  :focus {
+    outline: 3px solid #FFD700;
+    outline-offset: 2px;
+  }
+  
+  /* تحسين الرؤية */
+  .high-contrast {
+    filter: contrast(1.2) brightness(1.1);
+  }
+}
+
+/* رسائل التوجيه للتلفزيون */
+.tv-instructions {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  z-index: 10000;
+  direction: rtl;
+}
+
+.tv-instructions .key {
+  background: #333;
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin: 0 3px;
+  font-weight: bold;
+}

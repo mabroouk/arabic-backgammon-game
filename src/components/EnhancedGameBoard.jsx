@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import TVRemoteControl from '../utils/tvRemoteControl';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -109,6 +110,20 @@ const EnhancedGameBoard = ({ gameMode, onBackToMenu, playerMode = { playerMode: 
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [showRules, setShowRules] = useState(true);
   const [board, setBoard] = useState([]);
+
+  // تهيئة نظام التحكم بالريموت للتلفزيون
+  useEffect(() => {
+    if (window.tvRemoteControl) {
+      window.tvRemoteControl.enable();
+      window.tvRemoteControl.updateFocusableElements();
+    }
+    
+    return () => {
+      if (window.tvRemoteControl) {
+        window.tvRemoteControl.disable();
+      }
+    };
+  }, []);
 
   // تهيئة اللوحة حسب نمط اللعب
   useEffect(() => {

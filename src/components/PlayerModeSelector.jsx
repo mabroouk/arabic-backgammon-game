@@ -7,7 +7,7 @@ import { Bot, Users, Zap, Brain, Target, Settings, Palette } from 'lucide-react'
 import BoardLayoutSelector from './BoardLayoutSelector';
 
 const PlayerModeSelector = ({ onModeSelect, selectedGameMode }) => {
-  const [selectedPlayerMode, setSelectedPlayerMode] = useState('ai');
+  const [selectedPlayerMode, setSelectedPlayerMode] = useState('ai'); // الافتراضي: اللعب مع الكمبيوتر
   const [aiDifficulty, setAiDifficulty] = useState('medium');
   const [aiSpeed, setAiSpeed] = useState('normal');
   const [showLayoutSelector, setShowLayoutSelector] = useState(false);
