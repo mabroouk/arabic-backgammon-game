@@ -2,31 +2,50 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Play, Settings, Users, Bot } from 'lucide-react';
-import GameBoard from './GameBoard';
+import EnhancedGameBoard from './EnhancedGameBoard';
+import GameModeSelection from './GameModeSelection';
 
 const BackgammonBox = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [gameStarted, setGameStarted] = useState(false);
-  const [gameMode, setGameMode] = useState('classic');
-  const [playerMode, setPlayerMode] = useState('ai'); // 'ai' or 'human'
+  const [showModeSelection, setShowModeSelection] = useState(false);
+  const [gameMode, setGameMode] = useState('aada');
+  const [playerMode, setPlayerMode] = useState({ playerMode: 'ai', aiDifficulty: 'medium', aiSpeed: 'normal' });
 
   const handleOpenBox = () => {
     setIsOpen(true);
     // تأخير بسيط لإظهار الرسوم المتحركة
     setTimeout(() => {
-      setGameStarted(true);
+      setShowModeSelection(true);
     }, 1000);
   };
 
   const handleCloseBox = () => {
     setGameStarted(false);
+    setShowModeSelection(false);
     setTimeout(() => {
       setIsOpen(false);
     }, 500);
   };
 
+  const handleModeSelect = (mode, playerSettings) => {
+    setGameMode(mode);
+    setPlayerMode(playerSettings);
+    setShowModeSelection(false);
+    setGameStarted(true);
+  };
+
+  const handleBackToModeSelection = () => {
+    setGameStarted(false);
+    setShowModeSelection(true);
+  };
+
   if (gameStarted) {
-    return <GameBoard onClose={handleCloseBox} gameMode={gameMode} playerMode={playerMode} />;
+    return <EnhancedGameBoard onBackToMenu={handleBackToModeSelection} gameMode={gameMode} playerMode={playerMode} />;
+  }
+
+  if (showModeSelection) {
+    return <GameModeSelection onModeSelect={handleModeSelect} onBack={handleCloseBox} />;
   }
 
   return (

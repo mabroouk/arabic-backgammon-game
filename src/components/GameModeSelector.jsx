@@ -58,9 +58,22 @@ const GameModeSelector = ({ selectedMode, onModeSelect, onStartGame }) => {
                         />
                       )}
                     </div>
-                    <div>
-                      <CardTitle className="text-lg">{mode.name}</CardTitle>
-                      <p className="text-sm text-muted-foreground">{mode.nameEn}</p>
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between">
+                        <CardTitle className="text-lg">{mode.name}</CardTitle>
+                        <div className="flex gap-2">
+                          <Badge 
+                            variant={mode.difficulty === 'سهلة' ? 'default' : mode.difficulty === 'متوسطة' ? 'secondary' : 'destructive'}
+                            className="text-xs"
+                          >
+                            {mode.difficulty}
+                          </Badge>
+                        </div>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <p className="text-sm text-muted-foreground">{mode.nameEn}</p>
+                        <p className="text-xs text-gray-500">{mode.duration}</p>
+                      </div>
                     </div>
                   </div>
                   <Button

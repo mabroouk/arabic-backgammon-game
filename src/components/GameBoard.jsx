@@ -3,8 +3,14 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Dice1, Dice2, Dice3, Dice4, Dice5, Dice6, Coffee, Crown, Timer, RotateCcw } from 'lucide-react';
+import { Dice1, Dice2, Dice3, Dice4, Dice5, Dice6, Coffee, Crown, Timer, RotateCcw, Volume2, VolumeX } from 'lucide-react';
 import { BackgammonGame, AdvancedAI, GAME_MODES } from '@/lib/gameLogic';
+import { createBoardForMode, getAvailableMovesForMode, getModeExplanation } from '../lib/boardSetups';
+import { soundManager } from '../utils/sounds';
+import TeaCup from './TeaCup';
+import Shisha from './Shisha';
+import GameRulesDisplay from './GameRulesDisplay';
+import MoveHighlighter from './MoveHighlighter';
 
 const DiceIcon = ({ value }) => {
   const icons = { 1: Dice1, 2: Dice2, 3: Dice3, 4: Dice4, 5: Dice5, 6: Dice6 };
